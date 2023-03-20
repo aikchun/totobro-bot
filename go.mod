@@ -3,8 +3,8 @@ module github.com/aikchun/totobro-bot
 go 1.20
 
 require (
+	github.com/aikchun/gotelegrambot v0.0.1
 	github.com/aikchun/gototo v1.0.0
-	github.com/aikchun/yagotb v1.0.0
 	github.com/aws/aws-lambda-go v1.38.0
 	github.com/joho/godotenv v1.5.1
 )
