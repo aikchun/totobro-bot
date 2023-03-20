@@ -2,10 +2,10 @@ cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMT
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/PuerkitoBio/goquery v1.5.1 h1:PSPBGne8NIUWw+/7vFBV+kG2J/5MOjbzc7154OaKCSE=
 github.com/PuerkitoBio/goquery v1.5.1/go.mod h1:GsLWisAFVj4WgDibEWF4pvYnkVQBpKBKeU+7zCJoLcc=
+github.com/aikchun/gotelegrambot v0.0.1 h1:5vXF0hfTAV2HRRAAEmKNobnaYGluyL0QvFz1KVvsoOg=
+github.com/aikchun/gotelegrambot v0.0.1/go.mod h1:BNGybABtzu0ztgtdGD3PtWigd8MjvVxRUuYii9DHtOA=
 github.com/aikchun/gototo v1.0.0 h1:h6B7G3bzXToYr3Kcd/6wTwei19VYGn16JvVJQ2avBWo=
 github.com/aikchun/gototo v1.0.0/go.mod h1:ehJ+u8009ep9j3E3X0c2hvskZ/CBY8YD1QKDELd9KuQ=
-github.com/aikchun/yagotb v1.0.0 h1:NZHh1lZach4JGL6CbCZk2Es1emzAMvgf9J/5eRxx0dg=
-github.com/aikchun/yagotb v1.0.0/go.mod h1:N4Es2g/n8eIj3bmRAI8yUiZDa+6X7JRyLowBOOdLJxw=
 github.com/andybalholm/cascadia v1.1.0/go.mod h1:GsXiBklL0woXo1j/WYWtSYYC4ouU9PqHO0sqidkEA4Y=
 github.com/andybalholm/cascadia v1.2.0 h1:vuRCkM5Ozh/BfmsaTm26kbjm0mIOM3yS5Ek/F5h18aE=
 github.com/andybalholm/cascadia v1.2.0/go.mod h1:YCyR8vOZT9aZ1CHEd8ap0gMVm2aFgxBp0T0eFw1RUQY=
