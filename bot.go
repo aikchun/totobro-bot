@@ -53,7 +53,7 @@ func (b Bot) handle(u *gotelegrambot.Update) {
 	args := tokens[1:]
 
 	for key, handler := range b.handlers {
-		if key == funcName || key == fmt.Sprintf("%s@TotoBroBot", funcName) {
+		if key == funcName || funcName == fmt.Sprintf("%s@TotoBroBot", key) {
 			handler(u, args)
 		}
 	}
