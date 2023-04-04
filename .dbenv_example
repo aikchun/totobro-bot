@@ -1,0 +1,4 @@
+POSTGRES_DB=totobrobot
+POSTGRES_HOST=db
+POSTGRES_PASSWORD=p0stgr3s
+POSTGRES_USER=totobrobot
