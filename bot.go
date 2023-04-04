@@ -226,28 +226,19 @@ func (b Bot) createNextDrawBroadcastPayloads(u *gotelegrambot.Update, n gototo.N
 }
 
 func isValidFetchNextDrawUpdate(u *gotelegrambot.Update) bool {
-	id, err := strconv.ParseInt(os.Getenv("FETCH_NEXT_DRAW_TASK_UPDATE_ID"), 10, 64)
+	id, err := strconv.ParseInt(os.Getenv("FETCH_NEXT_DRAW_TASK_MOCK_ID"), 10, 64)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	mid, err := strconv.ParseInt(os.Getenv("FETCH_NEXT_DRAW_TASK_MESSAGE_ID"), 10, 64)
-	if err != nil {
-		log.Fatal(err)
-	}
-	uid, err := strconv.ParseInt(os.Getenv("FETCH_NEXT_DRAW_TASK_USER_ID"), 10, 64)
-	if err != nil {
-		log.Fatal(err)
-	}
-	cid, err := strconv.ParseInt(os.Getenv("FETCH_NEXT_DRAW_TASK_CHAT_ID"), 10, 64)
-	if err != nil {
-		log.Fatal(err)
-	}
+	// we use one super large value for id for all the objects
+	// to make it incredibly unlikely for anyone but us to make this call
 
 	return u.UpdateID == id &&
-		u.Message.MessageID == mid &&
-		u.Message.From.ID == uid &&
-		u.Message.From.FirstName == os.Getenv("FETCH_NEXT_DRAW_TASK_USER_FIRST_NAME") && u.Message.Chat.ID == cid
+		u.Message.MessageID == id &&
+		u.Message.From.ID == id &&
+		u.Message.Chat.ID == id &&
+		u.Message.From.FirstName == os.Getenv("FETCH_NEXT_DRAW_TASK_USER_FIRST_NAME")
 }
 
 func isNextDrawToday(n gototo.NextDraw) bool {
