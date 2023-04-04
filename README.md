@@ -16,18 +16,23 @@ go get
 ## Change your env
 Copy `.dbenv_example` into `.dbenv`. Change the credentials as necessary.
 
-Copy `.env_example` into `.env`. Put the token you have gotten in Getting started (1) as `BOT_TOKEN`
+Copy `.env_example` into `.env`. 
+
+Put the token you have gotten in Getting started (1) as `BOT_TOKEN`
+
 `DATABASE_URL` should have the credentials listed in your `.dbenv`.
+
 `FETCH_NEXT_DRAW_TASK_MOCK_ID` can be any int64 value.
+
 `FETCH_NEXT_DRAW_TASK_USER_FIRST_NAME` can be any string value.
 
 ### Database
-#### Start your database
 Run `docker-compose up -d`
 This will start create a postgres db using docker.
 
 #### Migrations
 Run:
+
 ```bash
 docker run -v /absolute/path/to/migrations:/migrations --network host migrate/migrate -path=/migrations/ -database postgres://{POSTGRES_HOST}:{POSTGRES_PASSWORD}@localhost:5432/{POSTGRES_DB}\?sslmode=disable up
 ```
