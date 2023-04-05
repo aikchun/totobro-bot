@@ -16,6 +16,7 @@ import (
 )
 
 type Bot struct {
+	username            string
 	token               string
 	db                  *bun.DB
 	handlers            map[string]func(*gotelegrambot.Update, []string)
@@ -23,11 +24,12 @@ type Bot struct {
 	nextDrawService     *nextdrawservice.NextDrawService
 }
 
-func newBot(t string, db *bun.DB) Bot {
+func newBot(n string, t string, db *bun.DB) Bot {
 
 	ss := subscriptionservice.NewSubscriptionService(db)
 	nds := nextdrawservice.NewNextDrawService(db)
 	b := Bot{
+		username:            n,
 		token:               t,
 		db:                  db,
 		subscriptionService: &ss,
@@ -54,7 +56,7 @@ func (b Bot) handle(u *gotelegrambot.Update) {
 	args := tokens[1:]
 
 	for key, handler := range b.handlers {
-		if key == funcName || funcName == fmt.Sprintf("%s@TotoBroBot", key) {
+		if key == funcName || funcName == fmt.Sprintf("%s@%s", key, b.username) {
 			handler(u, args)
 		}
 	}

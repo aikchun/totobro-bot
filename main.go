@@ -16,7 +16,7 @@ import (
 
 func handleLambdaEvent(u gotelegrambot.Update) {
 	d := db.NewDB()
-	b := newBot(os.Getenv("BOT_TOKEN"), d)
+	b := newBot(os.Getenv("BOT_USERNAME"), os.Getenv("BOT_TOKEN"), d)
 	b.handle(&u)
 }
 
