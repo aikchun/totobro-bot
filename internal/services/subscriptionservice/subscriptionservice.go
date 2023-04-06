@@ -64,3 +64,13 @@ func (s *SubscriptionService) GetAll() ([]Subscription, error) {
 
 	return subs, err
 }
+
+func (ss *SubscriptionService) SetPrize(chatID int64, limit uint32) error {
+	sub := &Subscription{}
+
+	ctx := context.TODO()
+
+	_, err := ss.db.NewUpdate().Model(sub).Set("threshold = ?", limit).Where("chat_id = ?", chatID).Exec(ctx)
+
+	return err
+}
